@@ -1,0 +1,23 @@
+<resources>
+    <string name="app_name">Movies</string>
+    <string name="action_logout">Exit</string>
+    <string name="action_favoritos">Favorites</string>
+    <string name="title_activity_login">Login</string>
+    <string name="title_activity_movies">Movies</string>
+    <string name="title_activity_register">Register</string>
+    <string name="title_activity_favorites">Favorites</string>
+    <string name="prompt_email">Email</string>
+    <string name="prompt_password">Password</string>
+    <string name="action_sign_in_short">Sign in</string>
+    <string name="login_failed">"Login failed!"</string>
+    <string name="name">Name</string>
+    <string name="register">Register</string>
+    <string name="create_account">Create account</string>
+    <string name="default_notification_channel_id">favoritemovie</string>
+    <string name="notification_title">Favorite Movie</string>
+    <string name="notification_text">We have new movies for you!</string>
+    <string name="notification_ok">OK!</string>
+    <string name="removed_movie">"Removed film - %s</string>
+    <string name="added_movie">"Movie added - %s</string>
+
+</resources>
