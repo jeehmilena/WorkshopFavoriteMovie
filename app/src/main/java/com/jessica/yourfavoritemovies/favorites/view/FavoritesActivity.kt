@@ -3,12 +3,11 @@ package com.jessica.yourfavoritemovies.favorites.view
 import android.os.Bundle
 import android.view.MenuItem
 import androidx.appcompat.app.AppCompatActivity
-import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.google.android.material.snackbar.Snackbar
-import com.jessica.yourfavoritemovies.adapter.MovieAdapter
 import com.jessica.yourfavoritemovies.R
+import com.jessica.yourfavoritemovies.adapter.MovieAdapter
 import com.jessica.yourfavoritemovies.favorites.viewmodel.FavoriteViewModel
 import com.jessica.yourfavoritemovies.model.Result
 import kotlinx.android.synthetic.main.activity_favorites.*
@@ -34,28 +33,15 @@ class FavoritesActivity : AppCompatActivity() {
         supportActionBar?.setDisplayShowHomeEnabled(true);
         rv_movies_favorites.adapter = adapter
         rv_movies_favorites.layoutManager = LinearLayoutManager(this)
-        viewModel.getFavorites()
-        initViewModel()
+       //TODO - Recupera a lista de filmes favoritados a partir do viewmodel
     }
 
     private fun removeFavoriteMovie(result: Result){
-        viewModel.removeFavoriteClickListener(result)
+        //TODO - Referenciar a partir do viewmodel a função responsável por remover um filme
     }
 
-    private fun initViewModel() {
-        viewModel.stateList.observe(this, Observer { state ->
-            state?.let {
-                showListFavorites(it as MutableList<Result>)
-            }
-        })
+    //TODO - Implementar os observers do viewmodel
 
-        viewModel.stateRemoveFavorite.observe(this, Observer { favorite ->
-            favorite?.let {
-                showMessageRemovedFavorite(it)
-            }
-
-        })
-    }
 
     private fun showListFavorites(list: MutableList<Result>){
         adapter.removeItem(resultRemove)

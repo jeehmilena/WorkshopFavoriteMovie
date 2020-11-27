@@ -4,13 +4,11 @@ import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
-import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import com.google.android.material.snackbar.Snackbar
-import com.jessica.yourfavoritemovies.MovieUtil.validateNameEmailPassword
 import com.jessica.yourfavoritemovies.R
-import com.jessica.yourfavoritemovies.home.view.HomeActivity
 import com.jessica.yourfavoritemovies.authentication.viewmodel.AuthenticationViewModel
+import com.jessica.yourfavoritemovies.home.view.HomeActivity
 import kotlinx.android.synthetic.main.activity_register.*
 
 class RegisterActivity : AppCompatActivity() {
@@ -29,36 +27,11 @@ class RegisterActivity : AppCompatActivity() {
             val email = etv_email_register.text.toString()
             val password = etv_password_register.text.toString()
 
-            when {
-                validateNameEmailPassword(name, email, password) -> {
-                    viewModel.registrarUsuario(email,password)
-                }
-            }
-
-            initViewModel()
+            //TODO - Implementar a verificação do nome, email e senha e realizar o registro
         }
     }
 
-    private fun initViewModel() {
-
-        viewModel.stateRegister.observe(this, Observer { state ->
-            state?.let {
-               navigateToHome(it)
-            }
-        })
-
-        viewModel.loading.observe(this, Observer { loading ->
-            loading?.let {
-                showLoading(it)
-            }
-        })
-
-        viewModel.error.observe(this, Observer { loading ->
-            loading?.let {
-                showErrorMessage(it)
-            }
-        })
-    }
+    //TODO - Implementar os observers do viewmodel
 
     private fun navigateToHome(status: Boolean) {
         when {

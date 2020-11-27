@@ -9,13 +9,10 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.GridLayoutManager
-import com.firebase.ui.auth.AuthUI
-import com.google.android.gms.tasks.Task
 import com.google.android.material.snackbar.Snackbar
 import com.jessica.yourfavoritemovies.Constants.LANGUAGE_PT_BR
 import com.jessica.yourfavoritemovies.R
 import com.jessica.yourfavoritemovies.adapter.MovieAdapter
-import com.jessica.yourfavoritemovies.authentication.view.LoginActivity
 import com.jessica.yourfavoritemovies.favorites.view.FavoritesActivity
 import com.jessica.yourfavoritemovies.home.viewmodel.HomeViewModel
 import com.jessica.yourfavoritemovies.model.Result
@@ -51,12 +48,7 @@ class HomeActivity : AppCompatActivity() {
             }
         })
 
-        viewModel.stateFavorite.observe(this, Observer { favorite ->
-            favorite?.let {
-                showMessageFavorite(it)
-            }
-
-        })
+        //TODO - Impementar o observer referente ao filme favoritado
 
         viewModel.loading.observe(this, Observer { loading ->
             loading?.let {
@@ -76,15 +68,7 @@ class HomeActivity : AppCompatActivity() {
     }
 
     private fun favoriteMovie(result: Result) {
-        viewModel.salvarFavorito(result)
-    }
-
-    private fun showMessageFavorite(result: Result) {
-        Snackbar.make(
-            rv_movies,
-            resources.getString(R.string.added_movie, result.title),
-            Snackbar.LENGTH_LONG
-        ).show()
+        //TODO - Referenciar a partir do viewmodel a função responsável por favoritar
     }
 
     private fun showLoading(status: Boolean) {
@@ -113,24 +97,11 @@ class HomeActivity : AppCompatActivity() {
             startActivity(Intent(this, FavoritesActivity::class.java))
             return true
         }
-        if (id == R.id.action_logout) {
-            logout()
-            return true
-        }
+
+        //TODO - Veerificar o item de logout
+
         return super.onOptionsItemSelected(item)
     }
 
-    private fun logout() {
-        AuthUI.getInstance()
-            .signOut(this)
-            .addOnCompleteListener { task: Task<Void?>? ->
-                startActivity(
-                    Intent(
-                        this,
-                        LoginActivity::class.java
-                    )
-                )
-                finish()
-            }
-    }
+    //TODO - Implementar o logout da aplicação
 }
