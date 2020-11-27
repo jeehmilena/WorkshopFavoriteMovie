@@ -12,7 +12,7 @@ A partir de uma aplicação utilizando:
 
 A proposta do projeto é uma aplicação onde o usuário pode realizar um cadastro, logar no aplicativo e salvar seus filmes favoritos.
 
-Para realização das funcionalidades de registro e login foi implementado o uso do [Firebase Authentication](https://firebase.google.com/docs/auth?hl=pt-br).
-Para salvar os filmes favoritos foi utilizado o [Realtime Database](https://firebase.google.com/docs/database?hl=pt-br)
+Para realização das funcionalidades de registro e login foi implementado o uso do [Firebase Authentication](https://firebase.google.com/docs/auth?hl=pt-br)
+e para salvar os filmes favoritos foi utilizado o [Realtime Database](https://firebase.google.com/docs/database?hl=pt-br)
 
 
