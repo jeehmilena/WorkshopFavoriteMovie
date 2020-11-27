@@ -98,7 +98,7 @@ class HomeActivity : AppCompatActivity() {
             return true
         }
 
-        //TODO - Veerificar o item de logout
+        //TODO - Verificar o item de logout
 
         return super.onOptionsItemSelected(item)
     }
