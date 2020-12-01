@@ -15,4 +15,4 @@ A proposta do projeto é uma aplicação onde o usuário pode realizar um cadast
 Para realização das funcionalidades de registro e login foi implementado o uso do [Firebase Authentication](https://firebase.google.com/docs/auth?hl=pt-br)
 e para salvar os filmes favoritos foi utilizado o [Realtime Database](https://firebase.google.com/docs/database?hl=pt-br)
 
-
+O resultado final do código pode ser encontrado no seguinte repositório [FavoriteMovie](https://github.com/jeehmilena/FavoriteMovie)
